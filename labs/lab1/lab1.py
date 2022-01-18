@@ -1,6 +1,6 @@
 """
 Name: <Jalena Austin>
-<Lab1>.py
+<MonthlyInterest>.py
 
 Problem: <Create a program that can accurately calculate inputs of annual interest rate, billing cycle and selected
 billing cycle day, alongside net balance to calculate the monthly interest charge effectively.>
