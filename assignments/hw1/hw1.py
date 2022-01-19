@@ -1,34 +1,74 @@
 """
-Name: <your name goes here – first and last>
-<ProgramName>.py
+Name: <Jalena Austin>
+<GettingStarted>.py
 
-Problem: <Brief, one or two sentence description of the problem that this program solves, in your own words.>
+Problem: <This program is used to evaluate different inputs of various kinds to
+    accurately calculate simple conversions or to have various amounts be calculated
+    to one form of measurements or converting one form of measurement to another.
+    This program takes into account different forms of inputs to get a particular
+    output of the desired form by producing outputs and doing specific arithmetic.>
 
-Certification of Authenticity:
-<include one of the following>
-I certify that this assignment is entirely my own work.
-I certify that this assignment is my own work, but I discussed it with: <Name(s)>
+Certification of Authenticity: <I certify that this assignment is entirely my own work.>
 """
 
 
 def calc_rec_area():
-    pass
+    length = eval(input("Enter the length: "))
+    width = eval(input("Enter the width: "))
+    area = length * width
+    print("Area =", area)
+
+
+calc_rec_area()
+
+print()
 
 
 def calc_volume():
-    pass
+    length = eval(input("Enter the length: "))
+    width = eval(input("Enter the width: "))
+    height = eval(input("Enter the height: "))
+    volume = length * width * height
+    print("Volume =", volume)
+
+
+calc_volume()
+
+print()
 
 
 def shooting_percentage():
-    pass
+    total = eval(input("Enter the player's total shots: "))
+    made = eval(input("Enter how many shots the player made: "))
+    percentage = (made / total) * 100
+    print("Shooting percentage:", percentage, "%")
+
+
+shooting_percentage()
+
+print()
 
 
 def coffee():
-    pass
+    pounds = eval(input("How many pounds of coffee would you like? "))
+    perlbs = pounds * 10.50
+    shipping = pounds * 0.86
+    total = perlbs + shipping + 1.50
+    print("You're total is: $", total)
+
+
+coffee()
+
+print()
 
 
 def kilometers_to_miles():
-    pass
+    kilometers = eval(input("How many kilometers did you travel? "))
+    miles = kilometers / 1.61
+    print("That's", miles, "miles!")
+
+
+kilometers_to_miles()
 
 
 if __name__ == '__main__':
