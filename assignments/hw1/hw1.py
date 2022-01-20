@@ -51,9 +51,9 @@ print()
 
 def coffee():
     pounds = eval(input("How many pounds of coffee would you like? "))
-    perlbs = pounds * 10.50
+    per_pound = pounds * 10.50
     shipping = pounds * 0.86
-    total = perlbs + shipping + 1.50
+    total = per_pound + shipping + 1.50
     print("You're total is: $", total)
 
 
