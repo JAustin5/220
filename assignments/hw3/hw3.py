@@ -1,34 +1,71 @@
 """
-Name: <your name goes here – first and last>
-<ProgramName>.py
+Name: <Jalena Austin>
+<Loops>.py
 
-Problem: <Brief, one or two sentence description of the problem that this program solves, in your own words.>
+Problem: <This program is to use loops for different events to output arithmetics within
+the loop and output the necessary amount to equate arithmetic evaluation.>
 
 Certification of Authenticity:
-<include one of the following>
-I certify that this assignment is entirely my own work.
-I certify that this assignment is my own work, but I discussed it with: <Name(s)>
+<I certify that this assignment is my own work, but I discussed it with: <Ashley Woods, Sam Austin>>
 """
 
 
 def average():
-    pass
+    enter = eval(input('How many grades will you enter?'))
+    average_acc = 0
+
+    for i in range(enter):
+        grade = eval(input('Enter grade'))
+        average_acc = average_acc + grade
+
+    average_grade = average_acc / enter
+
+    print("Average is ", average_grade)
 
 
 def tip_jar():
-    pass
+    tips = 0
+    for i in range(1, 6):
+        donate = eval(input('How much would you like to donate?'))
+        tips = tips + donate
+
+    print("Total tips: $", tips)
 
 
 def newton():
-    pass
+    root = eval(input('What number do you want to square root? '))
+    improve = eval(input('How many times should we improve the approximation? '))
+
+    approximation = root
+
+    for i in range(improve):
+        approximation = (approximation + root / approximation) / 2
+
+    print('The square root is approximately ', approximation)
 
 
 def sequence():
-    pass
+    term = eval(input('How many terms would you like? '))
+    terms_acc = 1
+
+    for i in range(term):
+        print(terms_acc, end=" ")
+        terms_acc = terms_acc + 2 * (i % 2)
 
 
 def pi():
-    pass
+    n = eval(input('How many terms in the series? '))
+    n_acc = 1
+
+    for i in range(n):
+        num = i + (2.0 - (i % 2.0))
+
+        den = i + (1.0 + (i % 2.0))
+
+        n_acc = n_acc * (num / den)
+
+    final = n_acc * 2
+    print(final)
 
 
 if __name__ == '__main__':
