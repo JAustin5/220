@@ -54,17 +54,17 @@ def sequence():
 
 
 def pi():
-    n = eval(input('How many terms in the series? '))
-    n_acc = 1
+    enter_n = eval(input('How many terms in the series? '))
+    acc = 1
 
-    for i in range(n):
+    for i in range(enter_n):
         num = i + (2.0 - (i % 2.0))
 
         den = i + (1.0 + (i % 2.0))
 
-        n_acc = n_acc * (num / den)
+        acc = acc * (num / den)
 
-    final = n_acc * 2
+    final = acc * 2
     print(final)
 
 
