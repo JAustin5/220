@@ -1,6 +1,6 @@
 """
 Name: <Jalena Austin>
-<Graphics>.py
+<Graphics&Strings>.py
 
 Problem: <This program is to use strings and lists in various cases for algorithmic,
  drawing, and altering shape colors within various functions. This program
@@ -8,7 +8,7 @@ Problem: <This program is to use strings and lists in various cases for algorith
 
 Certification of Authenticity:
 <I certify that this assignment is entirely my own work, but I discussed it with:
-<Ashley Woods, Arnold Aguila, Logan Segal>>
+<Ashley Woods, Logan Segal>>
 """
 
 
