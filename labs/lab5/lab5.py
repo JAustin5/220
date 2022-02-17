@@ -11,7 +11,7 @@ Certification of Authenticity:
 <Ashley Woods, Logan Segal>>
 """
 
-
+#need to keep in mind that this grade was lower and is possible chance for correction before final lab
 from graphics import *
 import math
 
