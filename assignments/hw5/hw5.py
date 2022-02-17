@@ -85,11 +85,4 @@ def pig_latin():
 
 
 if __name__ == '__main__':
-    # name_reverse()
-    # company_name()
-    # initials()
-    # names()
-    # thirds()
-    # word_average()
-    # pig_latin()
     pass
