@@ -19,8 +19,6 @@ def calc_rec_area():
     print("Area =", area)
 
 
-calc_rec_area()
-
 print()
 
 
@@ -32,8 +30,6 @@ def calc_volume():
     print("Volume =", volume)
 
 
-calc_volume()
-
 print()
 
 
@@ -43,8 +39,6 @@ def shooting_percentage():
     percentage = (made / total) * 100
     print("Shooting percentage:", percentage, "%")
 
-
-shooting_percentage()
 
 print()
 
@@ -57,8 +51,6 @@ def coffee():
     print("You're total is: $", total)
 
 
-coffee()
-
 print()
 
 
@@ -66,9 +58,6 @@ def kilometers_to_miles():
     kilometers = eval(input("How many kilometers did you travel? "))
     miles = kilometers / 1.61
     print("That's", miles, "miles!")
-
-
-kilometers_to_miles()
 
 
 if __name__ == '__main__':

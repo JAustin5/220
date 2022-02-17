@@ -133,7 +133,7 @@ def process_string():
     last_char = string_int[-1]
     print(last_char, end='\n')
 
-    five_char = string_int[2:6]
+    five_char = string_int[1:5]         #originally [2:6]
     print(five_char, end='\n')
 
     first_and_last = first_char + last_char
@@ -199,23 +199,23 @@ def target():
     win = GraphWin("Target", win_width, win_height)
     win.setBackground("white")
 
-    yellow_ring = Circle(Point(200, 200), 40)
+    yellow_ring = Circle(Point(200, 200), 65)
     yellow_ring.setFill('yellow')
     yellow_ring.setOutline('black')
 
-    red_ring = Circle(Point(200, 200), 75)
+    red_ring = Circle(Point(200, 200), 100)
     red_ring.setFill('red')
     red_ring.setOutline('black')
 
-    blue_ring = Circle(Point(200, 200), 110)
+    blue_ring = Circle(Point(200, 200), 135)
     blue_ring.setFill('blue')
     blue_ring.setOutline('black')
 
-    black_ring = Circle(Point(200, 200), 145)
+    black_ring = Circle(Point(200, 200), 165)
     black_ring.setFill('black')
     black_ring.setOutline('black')
 
-    white_ring = Circle(Point(200, 200), 180)
+    white_ring = Circle(Point(200, 200), 200)
     white_ring.setFill('white')
     white_ring.setOutline('black')
 
@@ -225,7 +225,8 @@ def target():
     red_ring.draw(win)
     yellow_ring.draw(win)
 
-    message = Text(Point(200, 390), "Click anywhere to close")
+    message = Text(Point(200, 200), "Click anywhere to close")
+    message.setTextColor('black')
     message.draw(win)
 
     win.getMouse()
