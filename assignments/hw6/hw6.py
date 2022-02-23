@@ -1,42 +1,69 @@
 """
-Name: <your name goes here – first and last>
-<ProgramName>.py
+Name: <Jalena Austin>
+<Strings>.py
 
-Problem: <Brief, one or two sentence description of the problem that this program solves, in your own words.>
+Problem: <This program is to use various forms of string to create arguments and return values
+    alongside modifying objects with differing parameters.>
 
 Certification of Authenticity:
-<include one of the following>
-I certify that this assignment is entirely my own work.
-I certify that this assignment is my own work, but I discussed it with: <Name(s)>
+<I certify that this assignment is entirely my own work.>
 """
+import math
 
 
 def cash_converter():
-    pass
+    user_ent = eval(input("Enter an integer: "))
+    cash = "That is ${:.2f}".format(user_ent)
+    print(cash)
 
 
 def encode():
-    pass
+    user_message = input('Enter a message: ')
+    user_key = int(input('Enter a key: '))
+    final_message = ''
+
+    for i in range(len(user_message)):
+        message_input = ord(user_message[i]) + user_key
+        final_message += chr(message_input)
+
+    print(final_message)
 
 
 def sphere_area(radius):
-    pass
+    area_calc = float(4 * math.pi * (radius ** 2))
+    return area_calc
 
 
 def sphere_volume(radius):
-    pass
+    volume_calc = float((4 / 3) * math.pi * (radius ** 3))
+    return volume_calc
 
 
 def sum_n(number):
-    pass
+    for i in range(0, number + 1):
+        n_value = int((number * (number + 1)) / 2)
+        return n_value
 
 
 def sum_n_cubes(number):
-    pass
+    for i in range(0, number + 1):
+        cube_value = int(((number * (number + 1)) / 2) ** 2)
+        return cube_value
 
 
 def encode_better():
-    pass
+    user_message = input('Enter a message: ')
+    user_key = input('Enter a key: ')
+    final_message = ''
+
+    for i in range(len(user_message)):
+        message_input = ord(user_message[i]) - 65
+        convert_key = ord(user_key[i % len(user_key)]) - 65
+        new_code = message_input + convert_key
+        shift_message = new_code % 58
+        result_char = chr(shift_message + 65)
+        final_message += result_char
+    print(final_message)
 
 
 if __name__ == '__main__':
