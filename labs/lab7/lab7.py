@@ -43,10 +43,10 @@ def hit_vertical(ball, win):
 
     win_span = win.getHeight()
 
-    if ball_center + ball_rad >= win_span:
+    if ball_center <= ball_rad or ball_center >= win_span - ball_rad:
         return True
-    if ball_center <= win_span:
-        return True
+    else:
+        return False
 
 
 def hit_horizontal(ball, win):
@@ -55,10 +55,10 @@ def hit_horizontal(ball, win):
 
     win_span = win.getWidth()
 
-    if ball_center + ball_rad >= win_span:
+    if ball_center <= ball_rad or ball_center <= win_span - ball_rad:
         return True
-    if ball_center <= win_span:
-        return True
+    else:
+        return False
 
 
 def get_random_color():
@@ -69,10 +69,10 @@ def get_random_color():
 
 
 def bumper():
-    win = GraphWin("Bumper / Lab 7", 400, 400)
+    win = GraphWin("Bumper (Lab 7)", 500, 500)
 
-    circle_1 = Circle(Point(50, 200), 20)
-    circle_2 = Circle(Point(350, 200), 20)
+    circle_1 = Circle(Point(randint(1, 500), randint(1, 500)), 25)
+    circle_2 = Circle(Point(randint(1, 500), randint(1, 500)), 25)
 
     circle_1.setFill(get_random_color())
     circle_2.setFill(get_random_color())
@@ -85,7 +85,7 @@ def bumper():
     circle_2_y = get_random(25)
 
     while not win.checkMouse():
-        time.sleep(.5)
+        time.sleep(.2)
         circle_1.move(circle_1_x, circle_1_y)
         circle_2.move(circle_2_x, circle_2_y)
         if did_collide(circle_1, circle_2):
