@@ -7,7 +7,7 @@ Problem: <Will be able to create functions to not only write functions, but open
  that are opened.>
 
 Certification of Authenticity:
-<I certify that this assignment is my own work, but I discussed it with: <Brooke Duvall>
+<I certify that this assignment is my own work, but I discussed it with: <Brooke Duvall, Sam Austin>
 """
 
 from encryption import encode, encode_better
@@ -62,7 +62,12 @@ def send_message(file_name, friend_name):
     start_file = open(file_name, 'r')
     first_file = start_file.readlines()
     new_file = open(friend_name + '.txt', 'w')
-    print(first_file, file=new_file)
+
+    for line in first_file:
+        first_var = line.split()
+        for word in first_var:
+            word += word
+        print(line.replace('\n', ''), file=new_file)
 
     start_file.close()
     new_file.close()
@@ -72,13 +77,12 @@ def send_message(file_name, friend_name):
 
 def send_safe_message(file_name, friend_name, key):
     start_file = open(file_name, 'r')
-    file_read = start_file.read()
-    file_info = file_read.split('\n')
-    new_friend = open(friend_name + '.txt', 'a')
+    file_read = start_file.read().split()
+    new_friend = open(friend_name + '.txt', 'w')
 
-    for i in range(len(file_info)):
-        encoded = encode(file_info[i], key)
-        print(encoded, file=new_friend)
+    for i in range(len(file_read)):
+        encoded = encode(file_read[i], key)
+        print(encoded.replace('\n', ''), file=new_friend)
 
     start_file.close()
     new_friend.close()
@@ -89,12 +93,11 @@ def send_safe_message(file_name, friend_name, key):
 def send_uncrackable_message(file_name, friend_name, pad_file_name):
     open_file = open(file_name, 'r')
     message = open_file.read()
-    key_file = open(pad_file_name, 'r')
-    key = key_file.read()
+    key_file = open(pad_file_name, 'w')
     message_count = message.split()
 
-    for i in message_count:
-        encoded = encode_better(i, key, friend_name + '.txt')
+    for i in range(len(message_count)):
+        encoded = encode_better(i, key_file, friend_name + '.txt')
         print(encoded, file=key_file)
 
     open_file.close()

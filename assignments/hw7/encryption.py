@@ -19,5 +19,4 @@ def encode_better(user_message, user_key, file_name):
         result_char = chr(shift_message + 65)
         final_message += result_char
 
-    message_file = open(file_name, 'a')
-    print(final_message, file=message_file)
+    return final_message
