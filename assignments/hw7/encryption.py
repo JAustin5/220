@@ -20,4 +20,4 @@ def encode_better(user_message, user_key, file_name):
         final_message += result_char
 
     message_file = open(file_name, 'a')
-    message_file.write(final_message)
+    print(final_message, file=message_file)

@@ -21,10 +21,12 @@ def number_words(in_file_name, out_file_name):
     for line in my_file:
         for word in line.split():
             word_vale = word_vale + 1
-            new_file.write(str(word_vale) + " " + word + "\n")
+            print(str(word_vale) + " " + word, file=new_file)
 
     my_file.close()
     new_file.close()
+
+    print(new_file)
 
 
 def hourly_wages(in_file_name, out_file_name):
@@ -37,10 +39,12 @@ def hourly_wages(in_file_name, out_file_name):
             wage_var = eval(line_var[2])
             hour_var = eval(line_var[3])
             sum_pay = (wage_var * hour_var) + (1.65 * hour_var)
-        new_file.write(line_var[0] + ' ' + line_var[1] + ' ' + "{:.2f}".format(sum_pay) + '\n')
+        print(line_var[0] + ' ' + line_var[1] + ' ' + "{:.2f}".format(sum_pay), file=new_file)
 
     start_file.close()
     new_file.close()
+
+    print(out_file_name)
 
 
 def calc_check_sum(isbn):
@@ -56,26 +60,30 @@ def calc_check_sum(isbn):
 
 def send_message(file_name, friend_name):
     start_file = open(file_name, 'r')
-    reading_file = file_name.read()
-    new_file = open(friend_name + '.txt', 'a')
-    new_file.write(reading_file)
+    first_file = start_file.readlines()
+    new_file = open(friend_name + '.txt', 'w')
+    print(first_file, file=new_file)
 
     start_file.close()
     new_file.close()
 
+    print(friend_name)
+
 
 def send_safe_message(file_name, friend_name, key):
     start_file = open(file_name, 'r')
-    file = start_file.read()
-    file_info = file.split('\n')
+    file_read = start_file.read()
+    file_info = file_read.split('\n')
     new_friend = open(friend_name + '.txt', 'a')
 
     for i in range(len(file_info)):
         encoded = encode(file_info[i], key)
-        new_friend.write(encoded + '\n')
+        print(encoded, file=new_friend)
 
     start_file.close()
     new_friend.close()
+
+    print(friend_name)
 
 
 def send_uncrackable_message(file_name, friend_name, pad_file_name):
@@ -86,10 +94,13 @@ def send_uncrackable_message(file_name, friend_name, pad_file_name):
     message_count = message.split()
 
     for i in message_count:
-        encode_better(i, key, friend_name + '.txt')
+        encoded = encode_better(i, key, friend_name + '.txt')
+        print(encoded, file=key_file)
 
     open_file.close()
     key_file.close()
+
+    print(pad_file_name)
 
 
 if __name__ == '__main__':
