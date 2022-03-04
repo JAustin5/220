@@ -8,7 +8,7 @@ def encode(user_message, user_key):
     return final_message
 
 
-def encode_better(user_message, user_key, file_name):
+def encode_better(user_message, user_key):
     final_message = ''
 
     for i in range(len(user_message)):
