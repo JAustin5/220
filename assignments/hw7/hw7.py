@@ -7,7 +7,7 @@ Problem: <Will be able to create functions to not only write functions, but open
  that are opened.>
 
 Certification of Authenticity:
-<I certify that this assignment is my own work, but I discussed it with: <Brooke Duvall, Sam Austin>
+<I certify that this assignment is my own work, but I discussed it with: <Brooke Duvall, Sam Austin, Ashley Woods>
 """
 
 from encryption import encode, encode_better
@@ -92,18 +92,19 @@ def send_safe_message(file_name, friend_name, key):
 
 def send_uncrackable_message(file_name, friend_name, pad_file_name):
     open_file = open(file_name, 'r')
-    message = open_file.read()
-    key_file = open(pad_file_name, 'w')
-    message_count = message.split()
+    open_var = open_file.read()
+    encry_file = open(pad_file_name, 'r')
+    encry_enter = encry_file.read()
+    friend_n_fil = open(friend_name + '.txt', 'w')
 
-    for i in range(len(message_count)):
-        encoded = encode_better(i, key_file, friend_name + '.txt')
-        print(encoded, file=key_file)
+    encoded = encode_better(open_var, encry_enter)
+    print(encoded, file=friend_n_fil)
 
     open_file.close()
-    key_file.close()
+    encry_file.close()
+    friend_n_fil.close()
 
-    print(pad_file_name)
+    print(friend_name)
 
 
 if __name__ == '__main__':
