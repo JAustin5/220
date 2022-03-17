@@ -48,7 +48,7 @@ def sum_of_squares(nums):
 def starter(weight, wins):
     if (weight >= 150 and (weight < 160)) and (wins >= 5):
         return True
-    elif (weight > 199) or (wins > 20):
+    if (weight > 199) or (wins > 20):
         return True
     else:
         return False
@@ -107,10 +107,7 @@ def did_overlap(circle_one, circle_two):
     squared_circles = math.sqrt(math.pow((circle_two.getCenter().getX() - circle_one.getCenter().getX()), 2)
                                 + math.pow((circle_two.getCenter().getY() - circle_one.getCenter().getY()), 2))
 
-    if squared_circles <= (circle_one.getRadius() + circle_two.getRadius()):
-        return True
-    else:
-        return False
+    return squared_circles <= (circle_one.getRadius() + circle_two.getRadius())
 
 
 if __name__ == '__main__':
