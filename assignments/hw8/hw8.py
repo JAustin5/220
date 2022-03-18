@@ -8,8 +8,8 @@ Problem: <Creating various functions that use accumulations and/or conditional c
 Certification of Authenticity:
 <I certify that this assignment is my own work, but I discussed it with: <Brooke Duvall>
 """
-from graphics import *
 import math
+from graphics import GraphWin, Point, Circle, Text
 
 
 def add_ten(nums):
