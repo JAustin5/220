@@ -132,8 +132,9 @@ def play(board):
     user_choice = eval(input('Instructions: Welcome to Tic Tac Toe! Type in a number (1 through 9) to place your position on the board. X will start first. '))
 
     while not game_over(board):
+        player = 0
         for i in board:
-            player = i
+            player = i + 1
             if player % 2 == 0:
                 print('x' + "'s turn.")
             else:
@@ -150,7 +151,7 @@ def play(board):
             print('Tie')
         user_input = input('Do you want to play again?').lower()
         if user_input == 'y' or user_input == 'yes':
-            return
+            return user_choice, player = 0
         else:
             break
 
