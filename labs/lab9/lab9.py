@@ -132,16 +132,17 @@ def play(board):
     user_choice = eval(input('Instructions: Welcome to Tic Tac Toe! Type in a number (1 through 9) to place your position on the board. X will start first. '))
 
     while not game_over(board):
-        player = 1
-        if player % 2 == 0:
-            print('x' + "'s turn.")
-        else:
-            print('o' + "'s turn.")
-        position = int(user_choice) - 1
-        board = position[0:8]
-        is_legal(board, position)
-        fill_spot(board, position, player)
-        winning_game(board)
+        for i in board:
+            player = i
+            if player % 2 == 0:
+                print('x' + "'s turn.")
+            else:
+                print('o' + "'s turn.")
+            position = int(user_choice) - 1
+            board = position[0:8]
+            is_legal(board, position)
+            fill_spot(board, position, player)
+            winning_game(board)
 
         if get_winner(board) == 'x' or get_winner(board) == 'o':
             print(get_winner(board) + 'won!')
