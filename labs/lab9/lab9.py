@@ -134,7 +134,7 @@ def play(board):
     while not game_over(board):
         player = 0
         for i in board:
-            player = i + 1
+            player += i
             if player % 2 == 0:
                 print('x' + "'s turn.")
             else:
@@ -151,7 +151,7 @@ def play(board):
             print('Tie')
         user_input = input('Do you want to play again?').lower()
         if user_input == 'y' or user_input == 'yes':
-            return user_choice, player = 0
+            return user_choice
         else:
             break
 
