@@ -85,26 +85,27 @@ def play_graphics(secret_word):
             word_blanks = Text(Point(317.5, 460), (make_hidden_secret(secret_word, user_guesses)))
             word_blanks.draw(win)
             if not already_guessed(user_input, user_guesses):
-                word_bank = Text(Point(475, 130), user_guesses.append(user_input))
+                word_bank = Text(Point(475, 130), user_guesses.append(user_input + ''))
+                word_bank.setText(user_guesses)
                 word_bank.draw(win)
                 val_guess = False
                 if not letter_in_secret_word(user_input, secret_word) and tries == 6:
                     tries = tries - 1
                     face_circle = Circle(Point(275, 225), 27)
                     face_circle.draw(win)
-                elif tries == 5:
+                elif tries == 4:
                     body_line = Line(Point(275, 250), Point(275, 350))
                     body_line.draw(win)
-                elif tries == 4:
+                elif tries == 3:
                     right_arm = Line(Point(275, 270), Point(320, 300))
                     right_arm.draw(win)
-                elif tries == 3:
+                elif tries == 2:
                     left_arm = Line(Point(230, 300), Point(275, 270))
                     left_arm.draw(win)
-                elif tries == 2:
+                elif tries == 1:
                     right_leg = Line(Point(275, 350), Point(325, 400))
                     right_leg.draw(win)
-                elif tries == 1:
+                elif tries == 0:
                     left_leg = Line(Point(225, 400), Point(275, 350))
                     left_leg.draw(win)
         val_guess = True
@@ -120,7 +121,6 @@ def play_graphics(secret_word):
 
 
 def play_command_line(secret_word):
-    # secret_word = get_random_word(get_words('words.txt'))
     user_guesses = []
     tries = 6
     val_guess = True
@@ -144,6 +144,6 @@ def play_command_line(secret_word):
 
 
 if __name__ == '__main__':
-    pass
+    secret_word = get_random_word(get_words('words.txt'))
     # play_command_line(secret_word)
     # play_graphics(secret_word)
