@@ -37,8 +37,8 @@ class Door:
         rect_x = self.shape.getP1()
         rect_y = self.shape.getP2()
         p1x = rect_x.getX()
-        p1y = rect_y.getY()
-        p2x = rect_x.getX()
+        p1y = rect_x.getY()
+        p2x = rect_y.getX()
         p2y = rect_y.getY()
         if p2x >= clicked_x >= p1x and p2y >= clicked_y >= p1y:
             return True

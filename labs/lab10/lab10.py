@@ -32,7 +32,7 @@ def main():
     while not closing_button.is_clicked(user_click):
         if selected_door.is_clicked(user_click) and selected_door.get_label() == 'Open':
             selected_door.close('dark red', 'Closed')
-        else:
+        elif selected_door.is_clicked(user_click) and selected_door.get_label() == "Closed":
             selected_door.open('white', 'Open')
         user_click = win.getMouse()
     win.close()
