@@ -47,12 +47,12 @@ def three_door_game():
 
     door_1 = Door(Rectangle(Point(5, 200), Point(200, 500)), 'Door 1')
     door_1.color_door('brown')
+    door_1.draw(win)
     door_2 = Door(Rectangle(Point(250, 200), Point(450, 500)), 'Door 2')
     door_2.color_door('brown')
+    door_2.draw(win)
     door_3 = Door(Rectangle(Point(500, 200), Point(695, 500)), 'Door 3')
     door_3.color_door('brown')
-    door_1.draw(win)
-    door_2.draw(win)
     door_3.draw(win)
 
     random_door_selected = randint(1, 3)
@@ -65,7 +65,7 @@ def three_door_game():
 
     winner_msg = Text(Point(350, 150), "You win! ")
     loss_msg = Text(Point(350, 150), "Sorry, Incorrect! ")
-    play_again_txt = Text(Point(350, 600), "Click anywhere to play again ")
+    play_again_txt = Text(Point(350, 600), "Click anywhere to play again. ")
 
     click = win.getMouse()
     while not exit_button.is_clicked(click):
@@ -86,7 +86,7 @@ def three_door_game():
             win_count.setText(wins_acc)
             door_3.color_door('green')
             winner_msg.draw(win)
-        else: # if door x was clicked, then set secret door to green
+        else:
             if door_1.is_clicked(click):
                 loss_acc += 1
                 loss_count.setText(loss_acc)
