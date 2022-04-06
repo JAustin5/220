@@ -138,3 +138,4 @@ def three_door_game():
             begin_msg.draw(win)
             secret_door_msg.draw(win)
             click = win.getMouse()
+    win.close()
