@@ -49,3 +49,4 @@ class Face:
         left_eye_wink = Line(Point(x_point - (0.15 * 25), y_point), Point(x_point + (0.15 * 25), y_point))
         self.left_eye.undraw()
         left_eye_wink.draw(win)
+

@@ -5,6 +5,7 @@ Name: <Jalena Austin>
 Problem: <Complete different methods to have a parameters with only the use of other syntax besides any for loops.>
 
 Certification of Authenticity:
+
 I certify that this assignment is my own work, but I discussed it with: <Brooke Duvall>
 """
 

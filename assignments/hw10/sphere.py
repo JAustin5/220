@@ -15,4 +15,3 @@ class Sphere:
 
     def volume(self):
         return self.volume_equ
-
