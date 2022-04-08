@@ -7,7 +7,6 @@ Problem: <Complete different methods to have a parameters with only the use of o
 Certification of Authenticity:
 I certify that this assignment is my own work, but I discussed it with: <Brooke Duvall>
 """
-import math
 
 
 def fibonacci(n):
