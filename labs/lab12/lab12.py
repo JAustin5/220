@@ -59,7 +59,7 @@ def hi_lo_game():
             users_choice = eval(input("Enter a positive integer between 1 to 100. "))
     if (users_choice == random_choice) and (guesses != 0):
         print('You win!')
-        print('You win in ' + str(guesses) + 'guesses.')
+        print('You win in ' + str(guesses) + ' guesses.')
     else:
         print('Sorry, you lose. The number was ' + str(random_choice))
 
