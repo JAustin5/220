@@ -20,10 +20,6 @@ def read_data(filename):
         while i < len(each_char):
             added_list.append(int(each_char[i]))
             i += 1
-
-        # char_change = eval(str(each_char))
-        # 'process' the line so it's read to add to the list
-        # added_list += char_change
         line_read = f_name.readline()
     f_name.close()
     return added_list
