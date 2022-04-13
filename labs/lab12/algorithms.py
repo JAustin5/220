@@ -1,12 +1,11 @@
 """
-Name: <your name goes here – first and last>
-<Algorithms_LoopLists>.py
+Name: <Jalena Austin
 
 Problem: <Using the replacement of for loops to create methods with while loops, by reading through the line(s)
     of a list from a text file and outputting them into a list>
 
 Certification of Authenticity:
-I certify that this assignment is my own work, but I discussed it with: <Ashley Woods, Isaish Stapleton>
+I certify that this assignment is my own work, but I discussed it with: <Ashley Woods, Isaiah Stapleton>
 """
 
 
