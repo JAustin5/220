@@ -3,7 +3,7 @@ Name: <Jalena Austin>
 <TicTacToe>.py
 
 Problem: <Use a collection of functions to create a user-friendly and interactive play of the original game of
-    tictactoe.>
+    tic-tac-toe.>
 
 Certification of Authenticity:
 I certify that this assignment is my own work, but I discussed it with: <Ashley Woods>
@@ -56,21 +56,15 @@ def fill_spot(board, position, character):
 
 
 def winning_game(board):
-    if board[0] == board[1] == board[2]:
+    for i in range(3):
+        if board[i] == board[i + 3] == board[i + 6]:
+            return True
+    for j in range(0, 9, 3):
+        if board[j] == board[j + 1] == board[j + 2]:
+            return True
+    if board[0] == board[4] == board[8]:
         return True
-    if board[3] == board[4] == board[5]:
-        return True
-    if board[6] == board[7] == board[8]:
-        return True
-    if board[0] == board[7] == board[3]:
-        return True
-    if board[1] == board[9] == board[3]:
-        return True
-    if board[2] == board[9] == board[3]:
-        return True
-    if board[0] == board[9] == board[4]:
-        return True
-    if board[2] == board[7] == board[2]:
+    if board[2] == board[4] == board[6]:
         return True
     else:
         return False
@@ -86,74 +80,56 @@ def game_over(board):
 
 
 def get_winner(board):
-    if game_over(board) == (board[0] == board[1] == board[2]):
-        return 'x'
-    if game_over(board) == (board[3] == board[4] == board[5]):
-        return 'x'
-    if game_over(board) == (board[6] == board[7] == board[8]):
-        return 'x'
-    if game_over(board) == (board[0] == board[7] == board[3]):
-        return 'x'
-    if game_over(board) == (board[1] == board[9] == board[3]):
-        return 'x'
-    if game_over(board) == (board[2] == board[9] == board[3]):
-        return 'x'
-    if game_over(board) == (board[0] == board[9] == board[4]):
-        return 'x'
-    if game_over(board) == (board[0] == board[9] == board[4]):
-        return 'x'
-    if game_over(board) == (board[2] == board[7] == board[2]):
-        return 'x'
-    if game_over(board) == (board[0] == board[1] == board[2]):
-        return 'o'
-    if game_over(board) == (board[3] == board[4] == board[5]):
-        return 'o'
-    if game_over(board) == (board[6] == board[7] == board[8]):
-        return 'o'
-    if game_over(board) == (board[0] == board[7] == board[3]):
-        return 'o'
-    if game_over(board) == (board[1] == board[9] == board[3]):
-        return 'o'
-    if game_over(board) == (board[2] == board[9] == board[3]):
-        return 'o'
-    if game_over(board) == (board[0] == board[9] == board[4]):
-        return 'o'
-    if game_over(board) == (board[0] == board[9] == board[4]):
-        return 'o'
-    if game_over(board) == (board[2] == board[7] == board[2]):
-        return 'o'
     if not game_over(board):
         return None
 
+    for i in range(3):
+        if 'x' == board[i] == board[i + 3] == board[i + 6]:
+            return 'x'
+        else:
+            return 'o'
+    for j in range(0, 9, 3):
+        if 'x' == board[j] == board[j + 1] == board[j + 2]:
+            return 'x'
+        else:
+            return 'o'
+    if 'x' == (board[0] == board[8] == board[4]):
+        return 'x'
+    if 'x' == (board[2] == board[7] == board[2]):
+        return 'x'
+    if 'o' == (board[0] == board[8] == board[4]):
+        return 'o'
+    if 'o' == (board[2] == board[7] == board[2]):
+        return 'o'
+
 
 def play(board):
-    build_board()
+    print('Instructions: Welcome to Tic Tac Toe! Type in a number (1 through 9) to place your position on the board.')
+    print('To start playing answer the question below to start your game. Good luck!')
     print_board(board)
-    user_choice = eval(input('Instructions: Welcome to Tic Tac Toe! Type in a number (1 through 9) to place your position on the board. X will start first. '))
+    begin_game = input('Do you want to play (yes or no)? ')
+    while begin_game[0] == 'y':
+        spot_play = 0
+        while spot_play <= 9 and not game_over(board):
+            player = ''
+            if (spot_play % 2) == 0:
+                player += 'x'
+            elif (spot_play % 2) == 1:
+                player += 'o'
+            player_switch = int(input("It is {}'s turn, choose a spot on the board 1 through 9. ".format(player)))
+            while not is_legal(board, player_switch):
+                player_switch = int(input("This position is already filled. Choose a new position (1 through 9): "))
+            fill_spot(board, player_switch, player)
+            print_board(board)
+            spot_play += 1
+            if game_over(board):
+                if (winning_game(board) and get_winner(board)) == ('x' and 'o'):
+                    print("{} won". format(player))
+                else:
+                    print("Tie")
 
-    while not game_over(board):
-        player = 0
-        for i in board:
-            player += i
-            if player % 2 == 0:
-                print('x' + "'s turn.")
-            else:
-                print('o' + "'s turn.")
-            position = int(user_choice) - 1
-            board = position[0:8]
-            is_legal(board, position)
-            fill_spot(board, position, player)
-            winning_game(board)
-
-        if get_winner(board) == 'x' or get_winner(board) == 'o':
-            print(get_winner(board) + 'won!')
-        else:
-            print('Tie')
-        user_input = input('Do you want to play again?').lower()
-        if user_input == 'y' or user_input == 'yes':
-            return user_choice
-        else:
-            break
+        begin_game = input('Do you want to play again?').lower()
+        board = build_board()
 
 
 def main():
