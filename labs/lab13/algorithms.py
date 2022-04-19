@@ -62,15 +62,3 @@ def rect_sort(rectangles):
             rectangles[next_angle] = rectangles[next_angle - 1]
             next_angle = next_angle - 1
         rectangles[next_angle] = angle_rect
-
-
-# if __name__ == '__main__':
-#     shape_1 = Rectangle(Point(9, 3), Point(10, 2))
-#     shape_2 = Rectangle(Point(14, 1), Point(21, 7))
-#     shape_3 = Rectangle(Point(7, 5), Point(3, 2))
-#     print(calc_area(shape_1))
-#     print(calc_area(shape_2))
-#     print(calc_area(shape_3))
-#
-#     rect_sort([shape_1, shape_2, shape_3])
-#     print(rect_sort([shape_1, shape_2, shape_3]))
