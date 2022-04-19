@@ -55,8 +55,9 @@ def calc_area(rect):
 
 
 def rect_sort(rectangles):
-    for i in range(1, len(rectangles)):
-        angle_rect = calc_area(rectangles[i])
+    each_rect = calc_area(rectangles)
+    for i in range(1, len(each_rect)):
+        angle_rect = each_rect[i]
         next_angle = i
         while angle_rect > 0 and (rectangles[next_angle - 1] > angle_rect):
             rectangles[next_angle] = rectangles[next_angle - 1]
