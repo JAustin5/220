@@ -11,7 +11,6 @@ I certify that this assignment is my own work, but I discussed it with: <Isaiah 
 
 
 def star_find(filename):
-    # signal_count = 0
     fifth_indicator = 0
     pulse_ident = 0
     strength_acc = []
@@ -25,7 +24,6 @@ def star_find(filename):
             fifth_indicator += 1
             strength_acc.append(f_s_name[i])
         pulse_ident += 1
-        # signal_count += 1
         i = i + 1
 
     print("Number of pulses found: {}".format(len(strength_acc)))
