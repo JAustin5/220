@@ -62,3 +62,4 @@ def rect_sort(rectangles):
             rectangles[next_angle] = rectangles[next_angle - 1]
             next_angle = next_angle - 1
         rectangles[next_angle] = angle_rect
+

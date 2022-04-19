@@ -33,3 +33,4 @@ def star_find(filename):
     print("Number of signals found before fifth signal: {}".format(pulse_ident))
 
     f_name.close()
+
