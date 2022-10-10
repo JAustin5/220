@@ -55,4 +55,10 @@ def weighted_average(in_file_name, out_file_name):
     grade_file.close()
     avg_file.close()
 
-weighted_average("grades.txt", "output.txt")
+
+def main():
+    weighted_average("grades.txt", "output.txt")
+
+
+if __name__ == "__main__":
+    main()
