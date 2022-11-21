@@ -44,23 +44,24 @@ def num_digits():
 
 def hi_lo_game():
     guesses = 7
+    guess_counter = 0
     random_choice = randint(1, 100)
     users_choice = eval(input("Enter a positive integer between 1 to 100. Good luck! "))
     while not (users_choice == random_choice) and (guesses != 1):
         if users_choice >= random_choice:
             guesses -= 1
+            guess_counter += 1
             print('Too high!')
             print('You have ' + str(guesses) + ' guesses left. ')
             users_choice = eval(input("Enter a positive integer between 1 to 100. "))
         elif users_choice <= random_choice:
             guesses -= 1
+            guess_counter += 1
             print('Too low!')
             print('You have ' + str(guesses) + ' guesses left. ')
             users_choice = eval(input("Enter a positive integer between 1 to 100. "))
     if (users_choice == random_choice) and (guesses != 0):
         print('You win!')
-        print('You win in ' + str(guesses) + ' guesses.')
+        print('You won in ' + str(guess_counter) + ' guesses.')
     else:
         print('Sorry, you lose. The number was ' + str(random_choice))
-
-

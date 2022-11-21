@@ -133,7 +133,7 @@ def play(board):
 
 
 def main():
-    pass
+    play(build_board())
 
 
 if __name__ == '__main__':
