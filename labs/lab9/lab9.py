@@ -84,30 +84,33 @@ def get_winner(board):
         return None
 
     for i in range(3):
-        if 'x' == board[i] == board[i + 3] == board[i + 6]:
+        if 'x' == (board[i] == board[i + 3] == board[i + 6]):
             return 'x'
         else:
             return 'o'
     for j in range(0, 9, 3):
-        if 'x' == board[j] == board[j + 1] == board[j + 2]:
+        if 'x' == (board[j] == board[j + 1] == board[j + 2]):
             return 'x'
         else:
             return 'o'
     if 'x' == (board[0] == board[8] == board[4]):
         return 'x'
-    if 'x' == (board[2] == board[7] == board[2]):
+    if 'x' == (board[2] == board[4] == board[6]):
         return 'x'
     if 'o' == (board[0] == board[8] == board[4]):
         return 'o'
-    if 'o' == (board[2] == board[7] == board[2]):
+    if 'o' == (board[2] == board[4] == board[6]):
         return 'o'
 
 
 def play(board):
     print('Instructions: Welcome to Tic Tac Toe! Type in a number (1 through 9) to place your position on the board.')
     print('To start playing answer the question below to start your game. Good luck!')
+    x_win = 0
+    o_win = 0
     print_board(board)
     begin_game = input('Do you want to play (yes or no)? ')
+
     while begin_game[0] == 'y':
         spot_play = 0
         while spot_play <= 9 and not game_over(board):
@@ -124,10 +127,16 @@ def play(board):
             spot_play += 1
             if game_over(board):
                 if (winning_game(board) and get_winner(board)) == ('x' and 'o'):
-                    print("{} won". format(player))
+                    print("{} won".format(player))
+                    if player == 'x':
+                        x_win += 1
+                    if player == 'o':
+                        o_win += 1
                 else:
                     print("Tie")
 
+        print("x's score = ", x_win)
+        print("o's score = ", o_win)
         begin_game = input('Do you want to play again?').lower()
         board = build_board()
 
